@@ -71,3 +71,25 @@ The libX11-devel package is necessary to compile Perl/Tk.
 
 The libXft-devel package is necessary to compile with freetype support
 (XFT=1).
+
+The default /etc/fonts/fonts.conf does not include traditional X11
+fonts by default (seen on a CentOS 6.4 installation, probably also the
+case for the equivalent RedHat version). If you need traditional X11
+fonts (adobe-courier, adobe-helvetica, adobe-times etc.), then there
+are some options:
+
+* Provide a file /etc/fonts/local.conf with appropriate <dir>
+  elements, e.g.
+
+    <fontconfig>
+      <dir>/usr/share/X11/fonts</dir>
+    </fontconfig>
+
+  This change would be global for all users.
+
+* Create a user-specific configuration file in ~/.fonts.conf with the
+  same content.
+
+* Copy or symlink the directories with the X11 fonts into ~/.fonts
+  (for a user only) or a global font directory like
+  /usr/local/share/fonts.
