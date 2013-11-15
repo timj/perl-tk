@@ -2,7 +2,7 @@
 ; PNG.LIB module definition file for OS/2
 ;----------------------------------------
 
-; Version 1.2.12
+; Version 1.2.46
 
 LIBRARY		PNG
 DESCRIPTION	"PNG image compression library for OS/2"
@@ -10,7 +10,6 @@ CODE		PRELOAD MOVEABLE DISCARDABLE
 DATA		PRELOAD MOVEABLE MULTIPLE
 
 EXPORTS
-
 
   png_build_grayscale_palette
   png_check_sig
@@ -223,8 +222,11 @@ EXPORTS
   png_get_uint_31
   png_set_expand_gray_1_2_4_to_8
 
+; Added at version 1.2.41
+  png_write_sig
+  png_check_cHRM_fixed
+
 ; These are not present when libpng is compiled with PNG_NO_GLOBAL_ARRAYS
-  png_libpng_ver
   png_pass_start
   png_pass_inc
   png_pass_ystart
