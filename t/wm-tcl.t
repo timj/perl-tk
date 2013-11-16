@@ -1784,6 +1784,8 @@ eval {
 	raiseDelay;
 	if ($mw->stackorder("isabove", $t)) {
 	    # Problem seen with twm on travis-ci system
+	    # and on a Mac OS X system
+	    # (http://www.cpantesters.org/cpan/report/404e4ab4-3738-11e3-850b-7bc3a04c628c) 
 	    diag "Window manager too slow? Delay and retry...";
 	    raiseDelayLonger;
 	}
